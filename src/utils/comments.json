@@ -1,0 +1,378 @@
+ [
+    {
+      "id": "comment_1",
+      "text": "This algorithm explanation is confusing. Can someone help me understand?",
+      "author": "ConfusedStudent",
+      "likes": 23,
+      "publishedAt": "2024-01-15T10:30:00Z",
+      "replies": [
+        {
+          "id": "reply_1_1",
+          "text": "Sure! Which part specifically are you struggling with?",
+          "author": "HelpfulTeacher",
+          "likes": 15,
+          "publishedAt": "2024-01-15T11:00:00Z",
+          "replies": [
+            {
+              "id": "reply_1_1_1",
+              "text": "The recursive part at 5:32. How does it know when to stop?",
+              "author": "ConfusedStudent",
+              "likes": 8,
+              "publishedAt": "2024-01-15T11:15:00Z",
+              "replies": [
+                {
+                  "id": "reply_1_1_1_1",
+                  "text": "That's the base case! When n equals 0 or 1, it stops recursing and returns a value",
+                  "author": "HelpfulTeacher",
+                  "likes": 12,
+                  "publishedAt": "2024-01-15T11:30:00Z",
+                  "replies": [
+                    {
+                      "id": "reply_1_1_1_1_1",
+                      "text": "Ohhhh! Like a safety net to prevent infinite loops?",
+                      "author": "ConfusedStudent",
+                      "likes": 6,
+                      "publishedAt": "2024-01-15T11:45:00Z",
+                      "replies": [
+                        {
+                          "id": "reply_1_1_1_1_1_1",
+                          "text": "Exactly! You got it! 🎉",
+                          "author": "HelpfulTeacher",
+                          "likes": 9,
+                          "publishedAt": "2024-01-15T12:00:00Z"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "reply_1_1_1_2",
+                  "text": "Think of it like Russian nesting dolls - each call opens a smaller doll until you reach the tiniest one",
+                  "author": "AnalogyMaster",
+                  "likes": 18,
+                  "publishedAt": "2024-01-15T11:35:00Z",
+                  "replies": [
+                    {
+                      "id": "reply_1_1_1_2_1",
+                      "text": "That's actually a brilliant analogy! Thanks!",
+                      "author": "ConfusedStudent",
+                      "likes": 4,
+                      "publishedAt": "2024-01-15T11:50:00Z"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "reply_1_1_2",
+              "text": "Also the time complexity part. Why is it O(2^n)?",
+              "author": "ConfusedStudent",
+              "likes": 7,
+              "publishedAt": "2024-01-15T11:20:00Z",
+              "replies": [
+                {
+                  "id": "reply_1_1_2_1",
+                  "text": "Because each function call creates two more calls, forming a binary tree of calls",
+                  "author": "AlgorithmExpert",
+                  "likes": 14,
+                  "publishedAt": "2024-01-15T11:40:00Z",
+                  "replies": [
+                    {
+                      "id": "reply_1_1_2_1_1",
+                      "text": "So it doubles at each level? That sounds expensive!",
+                      "author": "ConfusedStudent",
+                      "likes": 5,
+                      "publishedAt": "2024-01-15T12:10:00Z",
+                      "replies": [
+                        {
+                          "id": "reply_1_1_2_1_1_1",
+                          "text": "Yep! That's why we use memoization or dynamic programming to optimize it",
+                          "author": "AlgorithmExpert",
+                          "likes": 8,
+                          "publishedAt": "2024-01-15T12:25:00Z"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "reply_1_2",
+          "text": "I was confused too at first. Drawing it out on paper really helped me!",
+          "author": "VisualLearner",
+          "likes": 11,
+          "publishedAt": "2024-01-15T11:05:00Z",
+          "replies": [
+            {
+              "id": "reply_1_2_1",
+              "text": "Good tip! Do you have any drawing tools you recommend?",
+              "author": "ConfusedStudent",
+              "likes": 3,
+              "publishedAt": "2024-01-15T11:25:00Z",
+              "replies": [
+                {
+                  "id": "reply_1_2_1_1",
+                  "text": "I use draw.io for digital diagrams, but honestly pen and paper works great too",
+                  "author": "VisualLearner",
+                  "likes": 7,
+                  "publishedAt": "2024-01-15T11:40:00Z"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comment_2",
+      "text": "Your code has a bug in line 23. The condition should be <= not <",
+      "author": "CodeReviewer",
+      "likes": 34,
+      "publishedAt": "2024-01-15T09:45:00Z",
+      "replies": [
+        {
+          "id": "reply_2_1",
+          "text": "Are you sure? I think < is correct for this use case",
+          "author": "DefensiveDev",
+          "likes": 12,
+          "publishedAt": "2024-01-15T10:15:00Z",
+          "replies": [
+            {
+              "id": "reply_2_1_1",
+              "text": "No, @DefensiveDev is wrong. If array length is 5, using < means you miss index 4",
+              "author": "DebugMaster",
+              "likes": 28,
+              "publishedAt": "2024-01-15T10:30:00Z",
+              "replies": [
+                {
+                  "id": "reply_2_1_1_1",
+                  "text": "Wait, let me check... you're right! I was thinking of a different scenario",
+                  "author": "DefensiveDev",
+                  "likes": 8,
+                  "publishedAt": "2024-01-15T10:45:00Z",
+                  "replies": [
+                    {
+                      "id": "reply_2_1_1_1_1",
+                      "text": "No worries! We all make mistakes. That's why code reviews are so important",
+                      "author": "DebugMaster",
+                      "likes": 15,
+                      "publishedAt": "2024-01-15T11:00:00Z",
+                      "replies": [
+                        {
+                          "id": "reply_2_1_1_1_1_1",
+                          "text": "Absolutely! Thanks for catching that. Fixed in my local copy",
+                          "author": "DefensiveDev",
+                          "likes": 6,
+                          "publishedAt": "2024-01-15T11:15:00Z"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "reply_2_1_2",
+              "text": "Actually, let me test this quickly...",
+              "author": "TestingEnthusiast",
+              "likes": 5,
+              "publishedAt": "2024-01-15T10:35:00Z",
+              "replies": [
+                {
+                  "id": "reply_2_1_2_1",
+                  "text": "Tested it - @CodeReviewer is definitely right. <= is needed here",
+                  "author": "TestingEnthusiast",
+                  "likes": 19,
+                  "publishedAt": "2024-01-15T10:50:00Z",
+                  "replies": [
+                    {
+                      "id": "reply_2_1_2_1_1",
+                      "text": "Thanks for testing! Always good to verify with actual code",
+                      "author": "CodeReviewer",
+                      "likes": 11,
+                      "publishedAt": "2024-01-15T11:05:00Z"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comment_3",
+      "text": "Great tutorial! But I think there's a better way to do this using modern ES6 features",
+      "author": "ModernJSDev",
+      "likes": 67,
+      "publishedAt": "2024-01-15T12:00:00Z",
+      "replies": [
+        {
+          "id": "reply_3_1",
+          "text": "What approach would you suggest?",
+          "author": "CuriousCoder",
+          "likes": 23,
+          "publishedAt": "2024-01-15T12:20:00Z",
+          "replies": [
+            {
+              "id": "reply_3_1_1",
+              "text": "You could use array destructuring and spread operator to make it more concise",
+              "author": "ModernJSDev",
+              "likes": 34,
+              "publishedAt": "2024-01-15T12:35:00Z",
+              "replies": [
+                {
+                  "id": "reply_3_1_1_1",
+                  "text": "Can you show a quick example? I'm still learning ES6",
+                  "author": "ES6Newbie",
+                  "likes": 12,
+                  "publishedAt": "2024-01-15T12:50:00Z",
+                  "replies": [
+                    {
+                      "id": "reply_3_1_1_1_1",
+                      "text": "Sure! Instead of arr[0], arr[1] you can do [first, second, ...rest] = arr",
+                      "author": "ModernJSDev",
+                      "likes": 18,
+                      "publishedAt": "2024-01-15T13:05:00Z",
+                      "replies": [
+                        {
+                          "id": "reply_3_1_1_1_1_1",
+                          "text": "Wow that's so much cleaner! Thanks for the example 🙏",
+                          "author": "ES6Newbie",
+                          "likes": 9,
+                          "publishedAt": "2024-01-15T13:20:00Z"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "reply_3_1_1_2",
+                  "text": "Also arrow functions would make this more readable",
+                  "author": "FunctionalProgrammer",
+                  "likes": 15,
+                  "publishedAt": "2024-01-15T12:55:00Z",
+                  "replies": [
+                    {
+                      "id": "reply_3_1_1_2_1",
+                      "text": "True! Though sometimes traditional functions are clearer for beginners",
+                      "author": "TeachingBalance",
+                      "likes": 8,
+                      "publishedAt": "2024-01-15T13:10:00Z",
+                      "replies": [
+                        {
+                          "id": "reply_3_1_1_2_1_1",
+                          "text": "Good point about readability vs modernity tradeoff",
+                          "author": "FunctionalProgrammer",
+                          "likes": 6,
+                          "publishedAt": "2024-01-15T13:25:00Z"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comment_4",
+      "text": "First! 🥇",
+      "author": "EarlyBird",
+      "likes": 156,
+      "publishedAt": "2024-01-15T09:00:00Z",
+      "replies": [
+        {
+          "id": "reply_4_1",
+          "text": "Actually you're third, check the timestamps 😏",
+          "author": "FactChecker",
+          "likes": 89,
+          "publishedAt": "2024-01-15T09:02:00Z",
+          "replies": [
+            {
+              "id": "reply_4_1_1",
+              "text": "Oops you're right! Got too excited 😅",
+              "author": "EarlyBird",
+              "likes": 34,
+              "publishedAt": "2024-01-15T09:05:00Z",
+              "replies": [
+                {
+                  "id": "reply_4_1_1_1",
+                  "text": "Happens to the best of us! At least you're enthusiastic 😄",
+                  "author": "FactChecker",
+                  "likes": 45,
+                  "publishedAt": "2024-01-15T09:10:00Z",
+                  "replies": [
+                    {
+                      "id": "reply_4_1_1_1_1",
+                      "text": "Thanks for being nice about it! Love this community ❤️",
+                      "author": "EarlyBird",
+                      "likes": 67,
+                      "publishedAt": "2024-01-15T09:15:00Z"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comment_5",
+      "text": "The performance of this solution seems suboptimal. Have you considered using a different data structure?",
+      "author": "PerformanceGuru",
+      "likes": 78,
+      "publishedAt": "2024-01-15T14:00:00Z",
+      "replies": [
+        {
+          "id": "reply_5_1",
+          "text": "What would you recommend instead?",
+          "author": "OptimizationSeeker",
+          "likes": 25,
+          "publishedAt": "2024-01-15T14:15:00Z",
+          "replies": [
+            {
+              "id": "reply_5_1_1",
+              "text": "A hash map would give you O(1) lookup instead of O(n) with arrays",
+              "author": "PerformanceGuru",
+              "likes": 43,
+              "publishedAt": "2024-01-15T14:30:00Z",
+              "replies": [
+                {
+                  "id": "reply_5_1_1_1",
+                  "text": "But doesn't that use more memory?",
+                  "author": "MemoryConscious",
+                  "likes": 16,
+                  "publishedAt": "2024-01-15T14:45:00Z",
+                  "replies": [
+                    {
+                      "id": "reply_5_1_1_1_1",
+                      "text": "True, it's a classic time vs space complexity tradeoff",
+                      "author": "PerformanceGuru",
+                      "likes": 22,
+                      "publishedAt": "2024-01-15T15:00:00Z",
+                      "replies": [
+                        {
+                          "id": "reply_5_1_1_1_1_1",
+                          "text": "I guess it depends on your specific use case then",
+                          "author": "MemoryConscious",
+                          "likes": 11,
+                          "publishedAt": "2024-01-15T15:15:00Z"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
