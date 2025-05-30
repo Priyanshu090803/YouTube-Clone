@@ -9,9 +9,14 @@ import { useDispatch, useSelector } from 'react-redux'
 import { toggleMenu } from '../utils/appSlice'
 import { YOUTUBE_SEARCH_API } from '../utils/constants'
 import {  cacheResults } from '../utils/searchSlice'
+import { useNavigate } from 'react-router-dom'
 
 
 const Navbar = () => {
+  const navigate = useNavigate()
+  const formatSearchQuery=(query)=>{
+    return query.trim().replace(/\s+/g, '+');
+  }
 
   const dispatch = useDispatch()
   const searchCache = useSelector(store => store.search)
@@ -31,7 +36,7 @@ const Navbar = () => {
 
     return(()=>{      // this will work that time when component is unmounting
       clearTimeout(timer)                           // destroying timer , kuki jse jse component re-render hota h to wo khud ko destroy krta h 
-                                                    //    dobara render krta h 
+                                               //    dobara render krta h 
     })
   },[searchQuerry])
 
@@ -76,16 +81,30 @@ const Navbar = () => {
       value={searchQuerry}
       onChange={(e)=>setSearchQuerry(e.target.value)}
       onFocus={()=>SetShowSuggestion(true)}
-      onBlur={()=>SetShowSuggestion(false)}
+      onBlur={()=>
+        setTimeout(() => {
+          SetShowSuggestion(false)
+        }, 200)
+        }
+      onKeyDown={(e)=>{
+        if(e.key=="Enter"){
+             navigate(`/results?search_query=${formatSearchQuery(searchQuerry)}`)  
+        }
+      }}
       />
     
       <button
+      onClick={()=> navigate(`/results?search_query=${formatSearchQuery(searchQuerry)}`)}
       className=' bg-rose-50 hover:bg-rose-100 md:px-6 md:text-3xl md:h-10 text-lg px-2 font-medium h-7 text-neutral-900 md:font-semibold  cursor-pointer active:scale-95 duration-300 ease-in-out  active:bg-neutral-100 rounded-r-4xl '
       ><CiSearch/></button>
         {showSuggestion&& searchQuerry&&
           <div className=' absolute top-10 bg-white w-[45vw] z-[60]  mt-2 rounded-2xl' > 
         <div className=' w-full text-xl py-6 font-semibold flex flex-col cursor-pointer gap-2 shadow-lg sh'>
-          {inputSuggestion.map((item)=><div className=' hover:bg-rose-50 flex gap-4 items-center px-6 py-2'><CiSearch className=' text-2xl mt-1'/><span className=' hover:bg-rose-50'>{item}</span></div>)}
+          {inputSuggestion.map((item,index)=><div
+          key={index}
+          onClick={()=>navigate(`/results?search_query=${formatSearchQuery(item)}`)}
+
+          className=' hover:bg-rose-50 flex gap-4 items-center px-6 py-2'><CiSearch className=' text-2xl mt-1'/><span className=' hover:bg-rose-50'>{item}</span></div>)}
         </div>
       </div>}
     </div>

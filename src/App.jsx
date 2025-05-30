@@ -4,6 +4,7 @@ import appStore from './utils/appStore.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import MainContainer from './components/MainContainer.jsx'
 import WatchPage from './components/WatchPage.jsx'
+import Results from "./components/Results.jsx"
 
 const appRouter = createBrowserRouter([{
     path:"/",
@@ -15,6 +16,9 @@ const appRouter = createBrowserRouter([{
         },{
           path:"/watch",
           element: <WatchPage/>
+        },{
+          path:"/results",
+          element:<Results/>
         }                     
     ]
   }])

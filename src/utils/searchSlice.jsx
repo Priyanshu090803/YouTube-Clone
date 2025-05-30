@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { object } from "motion/react-client";
 
 const searchSlice = createSlice({
     name:"search",
