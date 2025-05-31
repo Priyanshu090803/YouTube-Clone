@@ -83,7 +83,8 @@ const Navbar = () => {
       onFocus={()=>SetShowSuggestion(true)}
       onBlur={()=>
         setTimeout(() => {
-          SetShowSuggestion(false)
+          SetShowSuggestion(false),
+          setSearchQuerry("")     // changed this part
         }, 200)
         }
       onKeyDown={(e)=>{

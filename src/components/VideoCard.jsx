@@ -2,6 +2,8 @@
 import React, { useEffect } from 'react'
 import { CHANNEL_API } from '../utils/constants'
 import { LuDot } from 'react-icons/lu'
+import { getTimeAgo } from '../utils/getTimeAgo'
+import { formatViewCount } from '../utils/formatViewCount'
 
   const VideoCard = ({info}) => {
     if(!info) return
@@ -9,39 +11,8 @@ import { LuDot } from 'react-icons/lu'
     // console.log(info) 
     const {snippet,statistics} =info
     const {title ,channelTitle,thumbnails,publishedAt} = snippet
-    const {viewCount} = statistics
-    const formatViewCount=(count)=>{
-      if(count>= 1000000){
-       return(count/1000000).toFixed(1)+"M"
-      }
-      if(count>=1000){
-        return(count/1000).toFixed(1)+"k"
-      }else{
-        return count
-      }
-    }
-   function getTimeAgo(isoDate) {
-  const now = new Date();
-  const date = new Date(isoDate);
-  const seconds = Math.floor((now - date) / 1000);
-  
-  let interval = Math.floor(seconds / 31536000);
-  if (interval >= 1) return `${interval} year${interval === 1 ? '' : 's'} ago`;
-  
-  interval = Math.floor(seconds / 2592000);
-  if (interval >= 1) return `${interval} month${interval === 1 ? '' : 's'} ago`;
-  
-  interval = Math.floor(seconds / 86400);
-  if (interval >= 1) return `${interval} day${interval === 1 ? '' : 's'} ago`;
-  
-  interval = Math.floor(seconds / 3600);
-  if (interval >= 1) return `${interval} hour${interval === 1 ? '' : 's'} ago`;
-  
-  interval = Math.floor(seconds / 60);
-  if (interval >= 1) return `${interval} minute${interval === 1 ? '' : 's'} ago`;
-  
-  return 'Just now';
-}
+    const {viewCount} = statistics||[]
+    
 
     return (
       <div className=' group'

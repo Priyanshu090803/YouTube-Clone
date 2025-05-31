@@ -6,18 +6,20 @@ import { useDispatch } from 'react-redux'
 import { closeMenu } from '../utils/appSlice'
 
 const VideoContainer = () => {
+
   const dispatch = useDispatch()
   const [video,setVideo]=useState([])
   const getVideos=async()=>{
     const data = await fetch(YOUTUBE_VIDEO_API)
     const json = await data.json()
-    // console.log(json?.items)
+    console.log(json)
     setVideo(json?.items)
   }
   
   useEffect(()=>{
     getVideos()
   },[])
+  if(!video)return
   return (
     <div className=' flex flex-wrap pt-2 px-4 '
     onClick={()=>dispatch(closeMenu())}
