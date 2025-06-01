@@ -1,13 +1,19 @@
+import { useState } from "react"
 import commentData from "../utils/comments.json"
 import CommentList from "./CommentList"
 const CommentSection = () => {
+const [showComment,SetShowComment] = useState(false)
+
   return (
-    <div className='  rounded-2xl ml-4'>
-        <h1 className=' font-medium text-2xl mb-10'>
+    <div className='  rounded-2xl '>
+        <h1 className=' font-medium text-2xl mb-10 cursor-pointer bg-red-100 py-4 px-3 rounded-2xl'
+        onClick={()=>SetShowComment(!showComment)}
+        >
             Comments
         </h1>
-        <CommentList comments={commentData}/>
+          {showComment&&<CommentList comments={commentData}/>}
     </div>
+
   )
 }
 
