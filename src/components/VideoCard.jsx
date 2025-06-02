@@ -18,7 +18,7 @@ import { formatViewCount } from '../utils/formatViewCount'
       <div className=' group'
       
       >
-    {thumbnails?.maxres?.url&&<div className='  m-4 md:w-[27.3vw] w-full min-h-[25vw] p-2  rounded-2xl cursor-pointer hover:bg-rose-100 duration-300 delay-100 ease-in-out transition-all'>
+    {thumbnails?.maxres?.url&&<div className='  md:m-4 md:w-[27.3vw] w-full min-h-[25vw] p-2  rounded-2xl cursor-pointer hover:bg-rose-100 duration-300 delay-100 ease-in-out transition-all'>
         <img
         className=' rounded-2xl w-full h-5/8 group-hover:rounded-none'
         alt='thumbnail' src={thumbnails?.maxres?.url}/>

@@ -21,7 +21,7 @@ const VideoContainer = () => {
   },[])
   if(!video)return
   return (
-    <div className=' flex flex-wrap pt-2 px-4 '
+    <div className=' flex flex-wrap pt-2 md:px-4 px-2 '
     onClick={()=>dispatch(closeMenu())}
     >
       {/* {video[0]&&<AdVideoCard info={video[0]}/>} */}
