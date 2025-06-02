@@ -10,7 +10,7 @@ const CommentList = ({comments}) => {
     <div className=' flex flex-col gap-10'>
 
       <Comment data={item} key={index}/>
-      <div className=' border-l ml-10'>
+      <div className=' border-l border-neutral-400 ml-10'>
         <CommentList comments={item.replies}/>
       </div>
     </div>

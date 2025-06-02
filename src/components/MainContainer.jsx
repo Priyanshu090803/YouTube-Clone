@@ -20,7 +20,7 @@ const MainContainer = () => {
        {/* Sidebar - Made sticky with proper constraints */}
        <StickySideBar/>
       {/* Main content */}
-      <div className='flex flex-col  overflow-y-auto overflow-x-hidden '>
+      <div className='flex flex-col  overflow-y-auto overflow-x-hidden scrollbar-hide '>
        <ButtonList/>
         <VideoContainer/>
         </div>

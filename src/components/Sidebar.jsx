@@ -34,7 +34,7 @@ const Sidebar = () => {
     transition={{
       duration:0.5
     }}
-    className=' z-[100] absolute top-0 bg-white  shadow md:w-[16vw] w-[47vw]  flex flex-col  h-screen overflow-y-scroll  text-neutral-900'>
+    className=' z-[100] absolute top-0 bg-white  shadow md:w-[16vw] w-[47vw]  flex flex-col  h-screen overflow-y-scroll scrollbar-hide  text-neutral-900'>
         <div className='  flex items-center  md:gap-4  gap-1 px-5 py-6 sticky top-0 h-20 bg-white'>
             <IoMenu 
             className=' cursor-pointer text-2xl md:text-4xl active:scale-95 duration-300 ease-in-out text-neutral-800 hover:bg-red-50 active:bg-red-50 rounded-full w-10 '

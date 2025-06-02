@@ -28,7 +28,7 @@ const Results = () => {
   return (
     <div className=' flex h-full w-full '>
     <StickySideBar/>
-    <div className=' h-full w-full flex flex-col  overflow-y-scroll gap-10 px-10 mt-10'> 
+    <div className=' h-full w-full flex flex-col  overflow-y-scroll gap-10 md:px-10 px-2 mt-10 scrollbar-hide'> 
        {searchResult.map((items)=> 
       <Link key={items.id.videoId} to={"/watch?v="+items?.id.videoId}>
         <ResultVideo data={items}/>

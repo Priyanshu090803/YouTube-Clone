@@ -73,7 +73,7 @@ const Navbar = () => {
       </a>
  
     </div>
-    <div className=' relative  w-[50vw] md:w[] flex   border border-neutral-400  items-center rounded-4xl ' >
+    <div className=' md:relative  w-[50vw]  flex   border border-neutral-400  items-center rounded-4xl ' >
       <input
       className=' w-full md:px-6  md:h-10 h-7 px-2 md:py-2 py-1  outline-0 rounded-l-4xl text-sm md:text-lg '
       type='text'
@@ -99,7 +99,7 @@ const Navbar = () => {
       className=' bg-rose-50 hover:bg-rose-100 md:px-6 md:text-3xl md:h-10 text-lg px-2 font-medium h-7 text-neutral-900 md:font-semibold  cursor-pointer active:scale-95 duration-300 ease-in-out  active:bg-neutral-100 rounded-r-4xl '
       ><CiSearch/></button>
         {showSuggestion&& searchQuerry&&
-          <div className=' absolute top-10 bg-white w-[45vw] z-[60]  mt-2 rounded-2xl' > 
+          <div className=' absolute top-10 bg-white md:w-[45vw] w-[100vw] z-[60] left-0  mt-2 rounded-2xl' > 
         <div className=' w-full text-xl py-6 font-semibold flex flex-col cursor-pointer gap-2 shadow-lg sh'>
           {inputSuggestion.map((item,index)=><div
           key={index}

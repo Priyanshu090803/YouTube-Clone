@@ -10,7 +10,7 @@ const buttonData= ["all","ai","javascript","computer programming","podcast","gam
 const ButtonList = () => {
   const dispatch = useDispatch();
   return (
-    <div className=' w-full flex mt-5 mx-2 gap-4 sticky top-0 px-8 py-2 bg-white z-0'
+    <div className=' w-full flex mt-5 mx-2 md:gap-4 gap-2 px-1 sticky top-0 md:px-8 md:py-2 bg-white z-0'
     onClick={()=>dispatch(closeMenu())}
     >
       {

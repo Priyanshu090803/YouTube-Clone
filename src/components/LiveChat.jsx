@@ -16,14 +16,14 @@ const LiveChat = () => {
                 name:generateRandomName(),
                 message:generateRandomMessages(10),
             }))                           
-        }, 1000);
+        }, 2000);
 
         return ()=> clearInterval(interval) // state clear krenge note=> function k andr krna interval clear. wrna sabse pehle return clearinterval chla dega
     
     },[])
   return (
-    <div className=' h-full w-full  flex flex-col gap-10'>
-    <div className=' h-[90%] w-full gap-4 flex  flex-col-reverse overflow-y-scroll '>
+    <div className=' h-full w-full  flex flex-col gap-10 '>
+    <div className=' h-[90%] w-full gap-4 flex  flex-col-reverse overflow-y-scroll scrollbar-hide'>
        
       {
       message.map((items,index)=>{
@@ -43,8 +43,8 @@ const LiveChat = () => {
         SetLiveMessage("")
         setTimeout(() => {
            dispatch(addmessage({
-          name:"Priyanshu's",
-          message:"This is our comment "+liveMessage
+          name:"Priyanshu's:",
+          message:" our comment: "+liveMessage
         }))
         }, 1000);   // 1 sec bad dalenge
        
