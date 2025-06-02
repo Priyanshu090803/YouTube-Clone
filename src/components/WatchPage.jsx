@@ -1,110 +1,109 @@
+// import React, { useEffect, useState } from 'react'
+// import { useDispatch } from 'react-redux'
+// import { closeMenu, toggleMenu } from '../utils/appSlice'
+// import { useSearchParams } from 'react-router-dom'
+// import CommentSection from './CommentSection'
+// import ChatMessage from './ChatMessage'
+// import LiveChat from './LiveChat'
+
+// const WatchPage = () => {
+//   const dispatch = useDispatch()
+//   const [showChat,SetShowChat]=useState(false)
+//   useEffect(()=>{
+//     dispatch(closeMenu())
+//   },[])
+//   const [searchParams] = useSearchParams(); // this will help to search the params
+//   console.log(searchParams.get("v"));  // used to get based on this . hmare Yt route k andr / k bad V tha for video and ye uske bad ki id get krega
+
+  
+//   return (
+//     <div className=' w-full h-full md:px-10 px-2 py-2 md:py-4 pb-20 overflow-y-scroll  flex md:flex-row flex-col md:gap-4 gap-2'
+//     onClick={()=>dispatch(closeMenu())}
+//     >
+//       <div className=' w-full'>     
+//        <iframe
+//       className=' w-full md:h-[35vw] h-[48vw] aspect-video rounded-xl'
+//       width="560"
+//        height="315"
+//        src={`https://www.youtube.com/embed/${searchParams.get("v")}?autoplay=1`}
+//         title="YouTube video player" 
+//          allow="accelerometer; autoplay;autoplay ;clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" 
+//          allowFullScreen></iframe>
+//          <div className='  mt-10 rounded-2xl shadow-xl w-full px-2 overflow-x-hidden'>       
+//           <CommentSection/>
+//          </div>
+//         </div>
+        
+//          <div className='  w-1/2  h-full rounded-2xl pt-2 pb-10 px-2'>
+//          <button className='  bg-neutral-300 py-2 my-4 rounded-lg px-1 shadow-sm cursor-pointer '
+//          onClick={()=>SetShowChat(!showChat)}
+//          >{showChat?"Hide Live chat":"Show Live chat"}</button>
+
+//          {showChat&&
+//           <LiveChat/>}
+     
+//          </div>
+//     </div>
+//   )
+// }
+
+// export default WatchPage
 
 
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { closeMenu, toggleMenu } from '../utils/appSlice'
+import { closeMenu } from '../utils/appSlice'
 import { useSearchParams } from 'react-router-dom'
 import CommentSection from './CommentSection'
-import ChatMessage from './ChatMessage'
 import LiveChat from './LiveChat'
 
 const WatchPage = () => {
   const dispatch = useDispatch()
   const [showChat, setShowChat] = useState(false)
-  
   useEffect(() => {
     dispatch(closeMenu())
   }, [])
-  
   const [searchParams] = useSearchParams()
-  console.log(searchParams.get("v"))
   
   return (
     <div 
-      className='w-full min-h-screen px-2 sm:px-4 lg:px-10 py-2 md:py-4 pb-20 overflow-y-auto scrollbar-hide'
+      className='w-full h-full px-2 md:px-10 py-2 md:py-4 pb-20 flex flex-col md:flex-row gap-2 md:gap-4 overflow-y-scroll'
       onClick={() => dispatch(closeMenu())}
     >
-      {/* Mobile and Tablet Layout */}
-      <div className='block xl:hidden'>
-        {/* Video Section */}
-        <div className='w-full mb-6'>
-          <iframe
-            className='w-full aspect-video rounded-lg sm:rounded-xl'
-            src={`https://www.youtube.com/embed/${searchParams.get("v")}?autoplay=1`}
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          />
-        </div>
+      {/* Main content (video + comments) - full width */}
+      <div className='w-full md:w-2/3'>
+        {/* Video player */}
+        <iframe
+          className='w-full h-[48vw] md:h-[35vw] rounded-xl'
+          src={`https://www.youtube.com/embed/${searchParams.get("v")}?autoplay=1`}
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        />
         
-        {/* Live Chat Toggle Button - Mobile/Tablet */}
-        <div className='mb-4'>
-          <button 
-            className='bg-neutral-300 hover:bg-neutral-400 transition-colors py-2 px-4 rounded-lg shadow-sm cursor-pointer w-full sm:w-auto
-            '
-            onClick={() => setShowChat(!showChat)}
-          >
-            {showChat ? "Hide Live Chat" : "Show Live Chat"}
-          </button>
-        </div>
-        
-        {/* Live Chat Section - Mobile/Tablet */}
-        {showChat && (
-          <div className='mb-6 bg-white rounded-lg shadow-lg border'>
-            <div className='h-64 sm:h-80 md:h-96'>
-              <LiveChat />
-            </div>
-          </div>
-        )}
-        
-        {/* Comments Section */}
-        <div className='bg-white rounded-lg sm:rounded-2xl shadow-xl'>
-          <CommentSection />
+        {/* Comments section */}
+        <div className='mt-6 md:mt-10 rounded-2xl  w-full px-2 overflow-x-hidden'>
+          <CommentSection/>
         </div>
       </div>
       
-      {/* Desktop Layout (XL and above) */}
-      <div className='hidden xl:flex gap-6'>
-        {/* Left Column - Video and Comments */}
-        <div className='flex-1 min-w-0'>
-          {/* Video Section */}
-          <div className='mb-8'>
-            <iframe
-              className='w-full aspect-video rounded-xl'
-              src={`https://www.youtube.com/embed/${searchParams.get("v")}?autoplay=1`}
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            />
-          </div>
-          
-          {/* Comments Section */}
-          <div className='bg-white rounded-2xl shadow-xl'>
-            <CommentSection />
-          </div>
-        </div>
+      {/* Live chat sidebar - appears only on desktop by default */}
+      <div className='w-full md:w-1/3'>
+        {/* Chat toggle button - visible on all screens */}
+        <button 
+          className='bg-neutral-300 py-2 my-4 rounded-lg px-4 shadow-sm cursor-pointer w-full md:w-auto'
+          onClick={() => setShowChat(!showChat)}
+        >
+          {showChat ? "Hide Live Chat" : "Show Live Chat"}
+        </button>
         
-        {/* Right Column - Live Chat */}
-        <div className='w-80 2xl:w-96 flex-shrink-0'>
-          <div className='sticky top-4'>
-            <button 
-              className='bg-neutral-300 hover:bg-neutral-400 transition-colors py-2 px-4 mb-4 rounded-lg shadow-sm cursor-pointer w-full'
-              onClick={() => setShowChat(!showChat)}
-            >
-              {showChat ? "Hide Live Chat" : "Show Live Chat"}
-            </button>
-            
-            {showChat && (
-              <div className='bg-white rounded-2xl shadow-xl border overflow-hidden'>
-                <div className='h-[calc(100vh-12rem)]'>
-                  <LiveChat />
-                </div>
-              </div>
-            )}
+        {/* Chat container - shown when toggled */}
+        {showChat && (
+          <div className='rounded-2xl pt-2 pb-10 h-[400px] md:h-[calc(100vh-200px)]'>
+            <LiveChat/>
           </div>
-        </div>
+        )}
       </div>
     </div>
   )

@@ -7,7 +7,7 @@ const CommentList = ({comments}) => {
     if(!comments)return
   return (
     comments.map((item,index)=>(
-    <div className=' flex flex-col gap-10'>
+    <div className=' flex flex-col gap-10 flex-wrap'>
 
       <Comment data={item} key={index}/>
       <div className=' border-l border-neutral-400 ml-10'>

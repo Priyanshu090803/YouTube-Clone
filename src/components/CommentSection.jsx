@@ -5,7 +5,7 @@ const CommentSection = () => {
 const [showComment,SetShowComment] = useState(false)
 
   return (
-    <div className='  rounded-2xl w-full '>
+    <div className='  rounded-2xl w-full'>
         <h1 className=' font-medium md:text-2xl mb-10 cursor-pointer bg-red-100 py-4 px-3 rounded-2xl'
         onClick={()=>SetShowComment(!showComment)}
         >
